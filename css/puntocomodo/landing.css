@@ -146,9 +146,61 @@ img.seleccionada {
 .modal .form-group.has-error.has-feedback .help-block.error-feedback {
 	display: block;
 }
+
 .seleccionar-opcion {
 	font-size: 18px !important;
 	width: 100%;
 	text-align: center;
 	height: 40px;
+}
+
+.gracias-table {
+	background: #CCC none repeat scroll 0% 0%; 
+	width: 80%; 
+	border: 0px solid #000; 
+	box-shadow: 5px 5px 10px #888; 
+	text-align: center;
+	font-family: "Open Sans",Arial,sans-serif;
+	font-weight: 700;
+	font-style: normal;	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.gracias-table td {
+	padding: 10px;
+}
+
+.consulta-datos-personales {
+	background: #006D77 none repeat scroll 0% 0%; 
+	width: 100%; 
+	border: 0px solid #000; 
+	box-shadow: 5px 5px 10px #888; 
+	text-align: left;
+	font-family: "Open Sans",Arial,sans-serif;
+	font-weight: 700;
+	font-style: normal;		
+	margin-top: 30px;
+	color: white;
+	height: 300px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.consulta-datos-personales td {
+	padding: 10px;
+}
+
+.consulta-datos-personales .input-lg {
+	height: 30px;
+	padding: 0px 16px;
+	font-size: 16px;
+}
+
+.consulta-datos-personales .input-textarea {
+	height: 160px !important;
+	padding: 5px 16px;
+	font-size: 14px;
 }
