@@ -1,0 +1,159 @@
+
+/**
+ * GLOBALES
+ */
+
+/* por el navbar de bootstrap */
+body {
+	padding-top: 70px;
+}
+
+
+/**
+ * BOOTSTRAP EXTENSIONS
+ */
+
+/* tablas con letra mini */
+.table-sm td, .table-sm th {
+	font-size: 12px;
+}
+
+/* ubicacion perfecta de imagen en navbar principal */
+.navbar-brand.logo img {
+	height: 20px;
+	position: relative;
+	top: -4px;
+}
+
+/* header mas chico en dashboard y ficha de cliente */
+.sub-header {
+	margin-top: 20px;
+}
+.sub-header h3,
+.sub-header h4 {
+	margin: 0;
+}
+
+/* etiquetas con numeros en el navbar */
+body > .navbar .label {
+	margin-left: 7px;
+}
+
+/* para botones y links ocultos en tablas que se activan al hacer mouse over */
+.hover-activar:hover .invisible.hacer-visible,
+.table-hover > tbody > tr:hover > td .invisible.hacer-visible,
+.table-hover > tbody > tr:hover > th .invisible.hacer-visible {
+  visibility: visible;
+}
+
+/* row con margen */
+.row.espaciado {
+	margin-bottom: 10px;
+}
+
+/* row para usar de footer, con padding vertical y una linea arriba */
+.row.footer {
+	border-top: 1px solid #e5e5e5;
+	padding: 20px 0;
+}
+
+/* labels mas suaves (ficha de contacto) */
+.label-soft {
+	background-color: #AAA;
+}
+
+/* bg-muted - gris */
+.bg-muted { 
+	background-color: #EFEFEF;
+}
+
+
+/**
+ * HELPERS PROPIOS
+ */
+
+.hide-overflow { 
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* hover que se destaca solo */
+.hover-activar:hover .hover-resaltar,
+.hover-activar:hover.hover-resaltar {
+	box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.25);
+	background: #fefefe;
+}
+
+.gigante {
+	font-size: 30px;
+}
+
+.nobr {
+	white-space: nowrap;
+}
+
+.strong { 
+	font-weight: bold;
+}
+
+.redondeado {
+	border-radius: 5px;
+}
+
+.globo {
+	padding: 5px 10px;
+	border-radius: 5px;
+}
+
+
+/**
+ * TYPEAHEAD 
+ */
+
+.twitter-typeahead {
+	width: 100%;
+}
+
+.tt-dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-dropdown-menu {
+	width: 400px;
+	margin-top: 12px;
+	padding: 10px 0;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+
+.tt-suggestion {
+  padding: 3px 20px;
+  line-height: 24px;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+
+/**
+ * BOOTSTRAP-SELECT 
+ */
+ 
+.form-group .bootstrap-select.btn-group:not(.input-group-btn),
+.form-group .bootstrap-select.btn-group[class*="span"] {
+	margin-bottom: 0;
+}
