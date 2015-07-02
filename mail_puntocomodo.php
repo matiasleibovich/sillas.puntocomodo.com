@@ -3,10 +3,8 @@
 include_once('libs/Mail.php');
 
 $from = "PuntoComodo <puntocomodo@gmail.com>";
-$to = "Matias Leibovich <matias.leibovich@gmail.com>";
-$date = date('Y-m-d H:m');
-$subject = "Nuevo Pedido (".$date.")";
-$body = "Hi,\n\nHow are you?";
+$to = $cliente['nombre']." <".$cliente['email'].">";
+$subject = "PuntoComodo :: Muchas Gracias por su Consulta";
 
 $host = "ssl://smtp.gmail.com";
 $port = "465";
@@ -30,8 +28,6 @@ $smtp = Mail::factory('smtp',
     'password' => $password));
 
 require('mail_template_1.php');
-echo $body;
-die;
 $mail = $smtp->send($to, $headers, $body);
 
 /*

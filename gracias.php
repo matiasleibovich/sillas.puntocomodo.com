@@ -1,7 +1,11 @@
 <?php
-	$datos = $_POST['valores'];
 	require_once('data.php');
-
+	$datos = $_POST['valores'];
+	$cliente = array();
+	$cliente['nombre'] = $datos[7];
+	$cliente['email'] = $datos[8];
+	$cliente['telefono'] = $datos[9];
+	$cliente['fecha'] = date('Y-m-d H:m');
 ?>
 <html lang="es">
 	<head>
@@ -67,5 +71,6 @@
 </html>	
 
 <?php 
+	flush();
 	require_once('mail_puntocomodo.php'); 
 ?>
