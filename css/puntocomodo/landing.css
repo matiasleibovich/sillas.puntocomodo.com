@@ -204,3 +204,16 @@ img.seleccionada {
 	padding: 5px 16px;
 	font-size: 14px;
 }
+
+#slideshow { 
+    position: relative; 
+    height: 50px; 
+}
+
+#slideshow > div { 
+    position: absolute; 
+    top: 2px; 
+    left: 10px; 
+    right: 10px; 
+    bottom: 2px; 
+}
