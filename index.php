@@ -26,13 +26,17 @@
 	    <?php include_once('header.php'); ?>
 
 		<!-- body -->
+		<div style="position: absolute; float: right; text-align: right; width: 100%;">
+		<img src="img/puntocomodo/compra_segura_2.png">
+		</div>
+
 		<div class="cuerpo" style="margin-top: 50px;">
 			<div class="container">
 				
 				<form method="post" action="gracias.php">					
-					<div class="text-center logo">
+					<div class="text-center logo" style="height: 100px;">
 						<img src="img/puntocomodo/punto_comodo_logo430.png" class="img-responsive center-block" alt="Punto Comodo" />
-						<img src="img/puntocomodo/punto_comodo_slogan.png" class="img-responsive center-block" alt="Punto Comodo" />
+						<img src="img/puntocomodo/punto_comodo_slogan.png" class="img-responsive center-block" alt="Punto Comodo" style="position:relative; top: -30px;"/>
 					</div>
 					
 					<?php foreach ($_pasos as $paso) { ?>

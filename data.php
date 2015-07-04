@@ -12,8 +12,8 @@
 	$_pasos = array(
 		// PASO 1 - TIPO
 		array(
-			'lead' => 'Cansado de tener que comprar s&oacute;lo lo que te quieren vender? <br/> <strong>Arm&aacute; tus muebles como m&aacute;s te guste, y te lo enviamos en 3 d&iacute;as</strong>',
-			'pregunta' => '¿Qué tipo de silla estás buscando?',
+			'lead' => file_get_contents('index_lead.php'),
+			'pregunta' => '¿Qué tipo de asciento estás buscando?',
 			'titulo' => 'Tipo de Asciento',
 			'tipo' => 'set',
 			'id' => 1,
