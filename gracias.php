@@ -5,7 +5,20 @@
 	$cliente['nombre'] = $datos[7];
 	$cliente['email'] = $datos[8];
 	$cliente['telefono'] = $datos[9];
+	$cliente['comentarios'] = $datos[11];
 	$cliente['fecha'] = date('Y-m-d H:m');
+	$zonas = $datos[10]; 
+	$i = 1; 
+	$cliente['zona'] = ''; 
+	foreach($zonas as $una_zona) { 
+		if ($i > 1) { $zona .= ', '; } 
+		$cliente['zona'] .= $una_zona;
+	} 
+
+//require('mail_template_cliente.php');
+//echo $body;
+//die;
+
 ?>
 <html lang="es">
 	<head>
@@ -27,12 +40,13 @@
 	</head>
 	<body>
 
-		<div class="cuerpo">
+		<?php include_once('header.php'); ?>
+
+		<div class="cuerpo" style="margin-top: 50px;">
 			<div class="container">
 				
 				<div class="text-center logo">
-					<img src="img/puntocomodo/punto_comodo_logo430.png" class="img-responsive center-block" alt="Punto Comodo" />
-					<img src="img/puntocomodo/punto_comodo_slogan.png" class="img-responsive center-block" alt="Punto Comodo" />
+				<img src="img/puntocomodo/logo_presupuesto2.png" class="img-responsive center-block" alt="Punto Comodo" />
 				</div>
 
 				<table border=0 align="center" style="border:0px solid black; width:90%; margin-top:20px;">
@@ -41,15 +55,30 @@
 						
 						<table align="center" class="gracias-table"><tr><td>
 						<b>Muchas gracias por tu consulta.</b><br>
-						Uno de nuestros asesores se contactar&aacute; con usted a la brevedad.
+						Uno de nuestros asesores se contactar&aacute; con vos a la brevedad.
 						</td></tr></table>
 
 					</td>
 				</tr>
 				</table>
 
+				<div style="margin: 20px auto 0px; width: 90%; font: 11pt Trebuchet MS,Tahoma,Verdana;">
+				Te hemos enviado un mail a tu casilla de correo con los datos que hemos recibido de tu consulta.
+				Uno de nuestros asesores comerciales está recibiendo tu pedido en este momento, y prepará un presupuesto
+				personalizado según tus necesidades. Te estaremos enviando un nuevo mail en donde podrás ver con detalle todas 
+				las opciones disponibles para que puedas elegir y armar tus muebles de la forma en que más te guste o necesites.  <br><br>
+
+				Te agradecemos por tu consulta y nos vamos a estar comunicando con vos a la brevedad.
+				Ante cualquier consulta o inquietud, por favor no dudes en contactarte con nosotros. <br>
+				</div>
+
 				<?php require('pedido_info.php'); ?>
+
+				<?php require('gracias_adicional.php'); ?>
+
+
 									
+
 			</div>
 		</div>
 
@@ -72,5 +101,5 @@
 
 <?php 
 	flush();
-	require_once('mail_puntocomodo.php'); 
+	require_once('mail_cliente.php'); 
 ?>

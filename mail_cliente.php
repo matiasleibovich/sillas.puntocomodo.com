@@ -17,7 +17,7 @@ $mail->Subject = 'PuntoComodo :: Muchas Gracias por tu Consulta';
 
 $mail->addAddress($cliente['email'], $cliente['nombre']);
 
-require('mail_template_1.php');
+require('mail_template_cliente.php');
 $mail->msgHTML($body);
 $mail->AltBody = 'PuntoComodo.com';
 
