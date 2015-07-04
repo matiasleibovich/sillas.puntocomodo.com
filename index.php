@@ -30,6 +30,10 @@
 		<img src="img/puntocomodo/compra_segura_2.png">
 		</div>
 
+		<div style="position: absolute; float: right; text-align: left; width: 100%; top: 20px;">
+		<img src="img/puntocomodo/calidad_2.png">
+		</div>
+
 		<div class="cuerpo" style="margin-top: 50px;">
 			<div class="container">
 				
