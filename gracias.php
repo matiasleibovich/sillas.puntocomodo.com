@@ -6,7 +6,7 @@
 	$cliente['email'] = $datos[8];
 	$cliente['telefono'] = $datos[9];
 	$cliente['comentarios'] = $datos[11];
-	$cliente['fecha'] = date('Y-m-d H:m');
+	$cliente['fecha'] = date('Y-m-d H:i');
 	$zonas = $datos[10]; 
 	$i = 1; 
 	$cliente['zona'] = ''; 
@@ -15,7 +15,7 @@
 		$cliente['zona'] .= $una_zona;
 	} 
 
-//require('mail_template_cliente.php');
+//require('mail_template_aviso.php');
 //echo $body;
 //die;
 
@@ -74,6 +74,7 @@
 
 				<?php require('pedido_info.php'); ?>
 
+				<br>
 				<?php require('gracias_adicional.php'); ?>
 
 
@@ -100,6 +101,8 @@
 </html>	
 
 <?php 
+	flush();
+	require_once('mail_aviso.php'); 
 	flush();
 	require_once('mail_cliente.php'); 
 ?>

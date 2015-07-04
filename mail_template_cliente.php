@@ -29,7 +29,7 @@ $body = <<<EOT
 	personalizado según tus necesidades. Te estaremos enviando un nuevo mail en donde podrás ver con detalle todas 
 	las opciones disponibles para que puedas elegir y armar tus muebles de la forma en que más te guste o necesites.  <br><br>
 
-	Te agradecemos por tu consulta y nos vamos a estar comunicando con vos a la brevedad. <br>
+	Te agradecemos por tu consulta y nos vamos a estar comunicando con vos a la brevedad.
 	Ante cualquier consulta o inquietud, por favor no dudes en contactarte con nosotros. <br>
 	</div>
 
@@ -39,6 +39,8 @@ $body .= $body_content;
 
 $body .= <<<EOT
 
+	<br>
+	
 	<div style="display: block; padding: 0px 10px; width: 350px; font: 11pt Trebuchet MS,Tahoma,Verdana;">
 	<img src="img/puntocomodo/home2.jpg" height="118" width="300">
 	<h4>ASIENTOS EJECUTIVOS Y PROFESIONALES</h4>
