@@ -59,7 +59,7 @@
 				    .fadeIn(1000)
 				    .end()
 				    .appendTo('#slideshow');
-				},  2000);
+				},  2500);
 			</script>
 
 

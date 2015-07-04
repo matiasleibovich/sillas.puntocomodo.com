@@ -1,40 +1,26 @@
 <?php 
 
-include_once('libs/Mail.php');
+require 'libs/PHPMailer/PHPMailerAutoload.php';
+$mail = new PHPMailer;
+$mail->isSMTP();
+$mail->SMTPDebug = 0;
+$mail->Debugoutput = 'html';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 587;
+$mail->SMTPSecure = 'tls';
+$mail->SMTPAuth = true;
+$mail->Username = "puntocomodo@gmail.com";
+$mail->Password = "Punt0C0m0d0";
+$mail->setFrom('puntocomodo@gmail.com', 'PuntoComodo');
+$mail->addReplyTo('puntocomodo@gmail.com', 'PuntoComodo');
+$mail->Subject = 'PuntoComodo :: Muchas Gracias por tu Consulta';
 
-$from = "PuntoComodo <puntocomodo@gmail.com>";
-$to = $cliente['nombre']." <".$cliente['email'].">";
-$subject = "PuntoComodo :: Muchas Gracias por su Consulta";
-
-$host = "ssl://smtp.gmail.com";
-$port = "465";
-$username = "puntocomodo@gmail.com";
-$password = "Punt0C0m0d0";
-
-$headers = array (
-  'From' => $from,
-  'To' => $to,
-  'Subject' => $subject,
-  'MIME-Version' => '1.0',
-  'Content-type' => 'text/html; charset=iso-8859-1',  
-);
-
-$smtp = Mail::factory('smtp',
-  array (
-  	'host' => $host,
-    'port' => $port,
-    'auth' => true,
-    'username' => $username,
-    'password' => $password));
+$mail->addAddress($cliente['email'], $cliente['nombre']);
 
 require('mail_template_1.php');
-$mail = $smtp->send($to, $headers, $body);
+$mail->msgHTML($body);
+$mail->AltBody = 'PuntoComodo.com';
 
-
-if (PEAR::isError($mail)) {
-  echo("<p>" . $mail->getMessage() . "</p>");
- } else {
-  echo("<p>Message successfully sent!</p>");
- }
-
+flush();
+$mail->send();
 ?>
