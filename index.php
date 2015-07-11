@@ -19,7 +19,9 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/jquery-1.11.0.min.js"></script>
+		<script src="js/jquery-migrate-1.2.1.js"></script>
+
 	</head>
 	<body>
 		
@@ -30,8 +32,12 @@
 		<img src="img/puntocomodo/compra_segura_2.png">
 		</div>
 
-		<div style="position: absolute; float: right; text-align: left; width: 100%; top: 20px;">
+		<div style="position: absolute; float: left; text-align: left; width: 100%; top: 20px;">
 		<img src="img/puntocomodo/calidad_2.png">
+		</div>
+
+		<div style="position: absolute; float: left; text-align: left; width: 100%; left: 150px;">
+		<a href="#" onClick="mostrarContacto();"><img src="img/puntocomodo/contacto.png" border=0></a>
 		</div>
 
 		<div class="cuerpo" style="margin-top: 50px;">
@@ -67,9 +73,10 @@
 									</h2>
 								</div>
 								<?php if (is_array($paso['opciones'])) { ?>
-									<div class="row row-opciones">
+									<div class="row row-opciones" style="text-align: center;">
+										
 										<?php foreach ($paso['opciones'] as $op) { ?>
-										<div class="col-sm-2 opcion <?php if (isset($op['class_name'])) echo $op['class_name']; ?>" id="opcion_<?=$op['id']?>" data-opcion-id="<?=$op['id']?>" data-opcion-value="<?=$op['valor']?>" data-opcion-label="<?=$op['label']?>">
+										<div class="col-sm-2 opcion <?php if (isset($op['class_name'])) echo $op['class_name']; ?>" id="opcion_<?=$op['id']?>" data-opcion-id="<?=$op['id']?>" data-opcion-value="<?=$op['valor']?>" data-opcion-label="<?=$op['label']?>" style="float: middle; margin: auto;">
 											<?php if ($paso['tipo'] == 'set') { ?>
 												<input type="hidden" name="valores[<?=$paso['campo_id']?>][<?=$op['id']?>]" value="0" />
 											<?php } ?>
@@ -81,6 +88,7 @@
 										  </div>
 										</div>
 										<?php } // ops ?>
+
 									</div><!--/.row.row-opciones-->
 								<?php } // opciones // ?>
 								<div class="row row-boton text-right form-inline">
@@ -108,6 +116,7 @@
 									<div class="text-center row row-comentario">
 										<div class="col-sm-10 col-sm-offset-1">
 											<div class="form-group">
+												<input type="hidden" id="solo_consulta" name="solo_consulta" value="no">
 												<label for="comentario" class="control-label">Dejanos tus comentarios y consultas:</label>
 												<textarea class="form-control input-lg" id="comentario" name="valores[11]" rows="2" placeholder="Escribí tus comentarios aquí"></textarea>
 												<span class="success-feedback glyphicon glyphicon-ok form-control-feedback"></span>
@@ -562,16 +571,22 @@
 				
 			}
 
+			function mostrarContacto() {
+				$('#solo_consulta').val('si');
+				$('#modal_contacto').modal('show');
 
+			}
 		</script>
-		<!-- /body -->
-		
-		<!-- footer scripts -->
+
 		<script src="js/bootstrap.min.js"></script>
-		<!-- /footer scripts -->
-		
-		<!-- google analytics -->
-		<!-- /google analytics -->
-		
+
+		<script>
+			var position = "400";
+			$('.row-opciones')
+			  .data('startingPosition', position)
+			  .data('scrollXPos', position)
+			  .smoothDivScroll('recalculateScrollableArea');
+		  </script>
+
 	</body>
 </html>

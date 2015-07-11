@@ -15,9 +15,8 @@
 		$cliente['zona'] .= $una_zona;
 	} 
 
-//require('mail_template_aviso.php');
-//echo $body;
-//die;
+	$solo_consulta = false;
+	if ((isset($_REQUEST['solo_consulta'])) and ($_REQUEST['solo_consulta'] == 'si')) { $solo_consulta = true; }
 
 ?>
 <html lang="es">
@@ -70,6 +69,7 @@
 				</tr>
 				</table>
 
+				<?php if (!$solo_consulta) { ?>
 				<div style="margin: 20px auto 0px; width: 90%; font: 11pt Trebuchet MS,Tahoma,Verdana;">
 				Te hemos enviado un mail a tu casilla de correo con los datos que hemos recibido de tu consulta.
 				Uno de nuestros asesores comerciales está recibiendo tu pedido en este momento, y prepará un presupuesto
@@ -81,6 +81,7 @@
 				</div>
 
 				<?php require('pedido_info.php'); ?>
+				<?php } ?>
 
 				<br>
 				<?php require('gracias_adicional.php'); ?>
@@ -109,8 +110,14 @@
 </html>	
 
 <?php 
-	flush();
-	require_once('mail_aviso.php'); 
-	flush();
-	require_once('mail_cliente.php'); 
+
+	if ($solo_consulta) {
+		flush();
+		require_once('mail_aviso.php'); 
+	} else {
+		flush();
+		require_once('mail_aviso.php'); 
+		flush();
+		require_once('mail_cliente.php'); 
+	}
 ?>
