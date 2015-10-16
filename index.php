@@ -43,7 +43,9 @@
 		<div class="cuerpo" style="margin-top: 50px;">
 			<div class="container">
 				
-				<form method="post" action="gracias.php">					
+				<form method="post" action="gracias" id="main-form">
+				<input type="hidden" name="test1" value="test1">
+
 					<div class="text-center logo" style="height: 100px;">
 						<img src="img/puntocomodo/punto_comodo_logo430.png" class="img-responsive center-block" alt="Punto Comodo" />
 						<img src="img/puntocomodo/punto_comodo_slogan.png" class="img-responsive center-block" alt="Punto Comodo" style="position:relative; top: -30px;"/>
@@ -183,12 +185,13 @@
 											</div>
 										</div>
 										<?php } ?>
-									</div><!-- campos -->
+									</div>
+
 		  						<div class="modal-footer">
-						        <button type="submit" class="btn btn-success btn-xl">&iexcl; Recibir Presupuestos !</button>
-						      </div>
+						        	<button type="submit" class="btn btn-success btn-xl">&iexcl; Recibir Presupuestos !</button>
+						      	</div>
 									
-								</div>
+								
 							</div>
 						</div>
 					</div>
@@ -397,8 +400,9 @@
 					return false;
 				
 				// evitamos doble click en el boton submit
-				$('.modal button').addClass('disabled');
+//				$('.modal button').addClass('disabled');
 				//return false;
+
 			}
 			
 			// valida lo que el usuario va tipeando y da feedback visual

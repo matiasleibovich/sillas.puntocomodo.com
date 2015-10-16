@@ -1,4 +1,7 @@
 <?php
+print_r($_REQUEST);
+die;
+
 	require_once('data.php');
 	$datos = $_POST['valores'];
 	$cliente = array();
