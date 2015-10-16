@@ -1,4 +1,11 @@
 <?php
+	$actual_link = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+	if ($actual_link == 'www.puntocomodo.com/sillas/index.php') {
+		header("Location: http://sillas.puntocomodo.com/");
+	}
+	if ($actual_link == 'local.puntocomodo.com/sillas/index.php') {
+		header("Location: http://local.sillas.puntocomodo.com/");
+	}
 	require_once('data.php');
 ?>
 <!-- landing -->
@@ -187,9 +194,9 @@
 										<?php } ?>
 									</div>
 
-		  						<div class="modal-footer">
-						        	<button type="submit" class="btn btn-success btn-xl">&iexcl; Recibir Presupuestos !</button>
-						      	</div>
+			  						<div class="modal-footer">
+							        	<button type="submit" class="btn btn-success btn-xl">&iexcl; Recibir Presupuestos !</button>
+							      	</div>
 									
 								</div>
 							</div>
